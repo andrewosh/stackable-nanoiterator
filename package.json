@@ -1,0 +1,28 @@
+{
+  "name": "hypertrie-stack-iterator",
+  "version": "1.0.0",
+  "description": "A stack-based iterator for iterating multiple hypertries",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewosh/hypertrie-stack-iterator.git"
+  },
+  "keywords": [
+    "hypertrie",
+    "iterator"
+  ],
+  "author": "Andrew Osheroff <andrewosh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewosh/hypertrie-stack-iterator/issues"
+  },
+  "homepage": "https://github.com/andrewosh/hypertrie-stack-iterator#readme",
+  "devDependencies": {
+    "nanoiterator": "^1.2.0",
+    "standard": "^14.3.1",
+    "tape": "^4.11.0"
+  }
+}
