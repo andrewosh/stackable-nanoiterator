@@ -32,7 +32,9 @@ Options can include:
 }
 ```
 `onpush` and `onpop` are synchronous, but can modify the StackIterator by pushing new values onto the stack.
+
 `map` is called with both the value that's about to be returned, and an array of the state values that you've associated with stack entries, in stack order.
+
 `open` is async, and is called prior to the first call to `next`.
 
 #### `ite.push(iterator, state)`
