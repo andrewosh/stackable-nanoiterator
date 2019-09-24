@@ -64,6 +64,22 @@ test('map is called', async t => {
   t.end()
 })
 
+test('open is called', async t => {
+  const ite = new StackIterator({
+    open (cb) {
+      t.pass('open was called')
+      t.end()
+      return process.nextTick(cb, null)
+    }
+  })
+  ite.push(arrayIterator(['a', 'b', 'c']), 'x')
+  ite.push(arrayIterator(['d']), 'y')
+  ite.next((err, value) => {
+    t.error(err, 'no error')
+    t.same(value, 'd')
+  })
+})
+
 test('destroy destroys all pushed iterators', async t => {
   const ites = [
     arrayIterator(['a', 'b', 'c']),

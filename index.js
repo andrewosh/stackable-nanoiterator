@@ -1,11 +1,14 @@
-class StackIterator {
+module.exports = class StackIterator {
   constructor (opts = {}) {
     this.maxDepth = opts.maxDepth || -1
+
+    this.open = opts.open
     this.map = opts.map
     this.onpush = opts.onpush
     this.onpop = opts.onpop
 
     this._stack = []
+    this._opened = false
     this._destroyed = false
     this._depth = 0
   }
@@ -20,6 +23,17 @@ class StackIterator {
 
   next (cb) {
     if (this._destroyed) return cb(new Error('Iterator was destroyed.'))
+    if (!this._opened) {
+      if (this.open) {
+        return this.open(err => {
+          if (err) return cb(err)
+          this._opened = true
+          return this.next(cb)
+        })
+      } else {
+        this._opened = true
+      }
+    }
     if (!this._stack.length) return cb(null, null)
     const { iterator } = this._stack[0]
     return iterator.next((err, val) => {
@@ -52,5 +66,3 @@ class StackIterator {
     }
   }
 }
-
-module.exports = StackIterator
