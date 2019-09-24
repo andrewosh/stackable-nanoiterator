@@ -29,7 +29,7 @@ Creates a new StackIterator.
 Options can include:
 ```js
 {
-  maxDepth: -1 // The maximum stack depth (-1 means infinite),
+  maxDepth: -1, // The maximum stack depth (-1 means infinite),
   onpush: function (iterator, state) { ... } // Called when a new iterator/state pair is pushed.
   onpop: function (iterator, state) { ... } // Called when an iterator/state pair is popped.
   map: function (value, states) { ... } // Called before a value is about to be returned.
