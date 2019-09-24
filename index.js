@@ -44,7 +44,14 @@ module.exports = class StackIterator {
         if (this.onpop) this.onpop(popped.iterator, popped.state)
         return this.next(cb)
       }
-      if (this.map) return this.map(val, this._stack.map(s => s.state), cb)
+      if (this.map) {
+        return this.map(val, this._stack.map(s => s.state), (err, mapped) => {
+          if (err) return cb(err)
+          if (!val && !mapped) return cb(null, null)
+          if (!mapped) return this.next(cb)
+          return cb(null, mapped)
+        })
+      }
       return cb(null, val)
     })
   }
