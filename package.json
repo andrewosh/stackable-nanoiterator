@@ -1,7 +1,7 @@
 {
   "name": "hypertrie-stack-iterator",
   "version": "1.0.0",
-  "description": "A stack-based iterator for iterating multiple hypertries",
+  "description": "A stack-based iterator for iterating over multiple Hypertries",
   "main": "index.js",
   "scripts": {
     "test": "standard && tape test/*.js"
