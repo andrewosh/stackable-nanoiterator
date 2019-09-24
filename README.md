@@ -12,12 +12,7 @@ npm i hypertrie-stack-iterator --save
 ### Usage
 ```js
 const StackIterator = require('hypertrie-stack-iterator')
-const ite = new StackIterator({
-  maxDepth: ...,
-  onpush: ...,
-  onpop: ...,
-  map: ...
-})
+const ite = new StackIterator()
 ite.push(iterator1)
 ite.push(iterator2)
 // Reading values from `ite` will now return the values from iterator2 then iterator1
