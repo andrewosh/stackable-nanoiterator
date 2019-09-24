@@ -1,25 +1,25 @@
 {
-  "name": "hypertrie-stack-iterator",
+  "name": "stackable-nanoiterator",
   "version": "1.0.0",
-  "description": "A stack-based iterator for iterating over multiple Hypertries",
+  "description": "A stack-based iterator for iterating over multiple nanoiterators",
   "main": "index.js",
   "scripts": {
     "test": "standard && tape test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrewosh/hypertrie-stack-iterator.git"
+    "url": "git+https://github.com/andrewosh/stackable-nanoiterator.git"
   },
   "keywords": [
-    "hypertrie",
-    "iterator"
+    "nanoiterator",
+    "stack"
   ],
   "author": "Andrew Osheroff <andrewosh@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andrewosh/hypertrie-stack-iterator/issues"
+    "url": "https://github.com/andrewosh/stackable-nanoiterator/issues"
   },
-  "homepage": "https://github.com/andrewosh/hypertrie-stack-iterator#readme",
+  "homepage": "https://github.com/andrewosh/stackable-nanoiterator#readme",
   "devDependencies": {
     "nanoiterator": "^1.2.0",
     "standard": "^14.3.1",
