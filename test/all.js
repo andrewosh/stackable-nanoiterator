@@ -37,7 +37,7 @@ test('onpop hook is called', async t => {
   var remainingPops = 3
   const states = ['x', 'y', 'z']
   const ite = new StackIterator({
-    onpop ({ iterator, state }) {
+    onpop (iterator, state) {
       t.same(state, states[--remainingPops])
     }
   })

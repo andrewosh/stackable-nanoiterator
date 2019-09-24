@@ -15,7 +15,7 @@ class StackIterator {
     this._depth++
     const entry = { iterator, state }
     this._stack.unshift(entry)
-    if (this.onpush) this.onpush(entry)
+    if (this.onpush) this.onpush(entry.iterator, entry.state)
   }
 
   next (cb) {
@@ -27,7 +27,7 @@ class StackIterator {
       if (val === null) {
         const popped = this._stack.shift()
         this._depth--
-        if (this.onpop) this.onpop(popped)
+        if (this.onpop) this.onpop(popped.iterator, popped.state)
         return this.next(cb)
       }
       if (this.map) val = this.map(val, this._stack.map(s => s.state))
