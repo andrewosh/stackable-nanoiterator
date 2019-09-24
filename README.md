@@ -1,23 +1,18 @@
-# hypertrie-stack-iterator
-[![Build Status](https://travis-ci.com/andrewosh/hypertrie-stack-iterator.svg?token=WgJmQm3Kc6qzq1pzYrkx&branch=master)](https://travis-ci.com/andrewosh/hypertrie-stack-iterator)
+# stackable-nanoiterator
+[![Build Status](https://travis-ci.com/andrewosh/stackable-nanoiterator.svg?token=WgJmQm3Kc6qzq1pzYrkx&branch=master)](https://travis-ci.com/andrewosh/stackable-nanoiterator)
 
-A stack-based iterator for iterating over multiple Hypertries.
+A stack-based iterator for iterating over multiple nanoiterators.
 
 The stack iterator provides push and pop hooks, as well as a map function for modifying return values based on what's currently on the stack. Push operations can also tag iterators with state that can be accessed during `map`.
 
 ### Installation
 ```
-npm i hypertrie-stack-iterator --save
+npm i stackable-nanoiterator --save
 ```
 ### Usage
 ```js
-const StackIterator = require('hypertrie-stack-iterator')
-const ite = new StackIterator({
-  maxDepth: ...,
-  onpush: ...,
-  onpop: ...,
-  map: ...
-})
+const StackIterator = require('stackable-nanoiterator')
+const ite = new StackIterator()
 ite.push(iterator1)
 ite.push(iterator2)
 // Reading values from `ite` will now return the values from iterator2 then iterator1
