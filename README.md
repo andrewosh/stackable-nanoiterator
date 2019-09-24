@@ -27,7 +27,7 @@ Options can include:
   maxDepth: -1, // The maximum stack depth (-1 means infinite),
   onpush: function (iterator, state) { ... } // Called when a new iterator/state pair is pushed.
   onpop: function (iterator, state) { ... } // Called when an iterator/state pair is popped.
-  map: function (value, states) { ... } // Called before a value is about to be returned.
+  map: function (value, states, cb) { ... } // Called before a value is about to be returned.
 }
 ```
 `onpush` and `onpop` are synchronous, but can modify the StackIterator by pushing new values onto the stack.

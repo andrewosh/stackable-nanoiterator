@@ -54,8 +54,8 @@ test('onpop hook is called', async t => {
 
 test('map is called', async t => {
   const ite = new StackIterator({
-    map (entry, states) {
-      return entry + '-' + states.join('-')
+    map (entry, states, cb) {
+      return process.nextTick(cb, null, entry + '-' + states.join('-'))
     }
   })
   ite.push(arrayIterator(['a', 'b', 'c']), 'x')
