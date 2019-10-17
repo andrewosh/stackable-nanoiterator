@@ -13,6 +13,10 @@ module.exports = class StackIterator {
     this._depth = 0
   }
 
+  get depth () {
+    return this._stack.length
+  }
+
   push (iterator, state) {
     if ((this._depth >= this.maxDepth) && this.maxDepth !== -1) return
     this._depth++
