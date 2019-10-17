@@ -1,6 +1,6 @@
 {
   "name": "stackable-nanoiterator",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A stack-based iterator for iterating over multiple nanoiterators",
   "main": "index.js",
   "scripts": {
