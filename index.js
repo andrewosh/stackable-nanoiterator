@@ -42,7 +42,7 @@ module.exports = class StackIterator {
     const { iterator } = this._stack[0]
     return iterator.next((err, val) => {
       if (err) return cb(err)
-      if (val === null) {
+      if (!val) {
         const popped = this._stack.shift()
         this._depth--
         if (this.onpop) this.onpop(popped.iterator, popped.state)
